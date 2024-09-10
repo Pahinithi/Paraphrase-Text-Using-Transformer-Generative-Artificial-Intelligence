@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraphrase Generator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container my-5">
+        <header class="text-center mb-4">
+            <h1 class="display-4">Paraphrase Text Generator</h1>
+            <p class="lead">Transform your text into multiple unique paraphrases using AI technology.</p>
+        </header>
+
+        <section class="form-section py-4">
+            <div class="card p-4 shadow-lg">
+                <h2 class="text-center mb-3">Generate Paraphrases</h2>
+                <form action="/generate" method="post" class="form">
+                    <div class="form-group">
+                        <label for="input_text">Enter your text:</label>
+                        <input type="text" id="input_text" name="input_text" class="form-control" placeholder="Enter text to paraphrase" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="num_paraphrases">Number of paraphrases:</label>
+                        <input type="number" id="num_paraphrases" name="num_paraphrases" class="form-control" placeholder="How many paraphrases?" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Generate</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Display generated paraphrases if available -->
+        {% if generated_responses %}
+        <section class="result mt-5">
+            <div class="card p-4 shadow-lg">
+                <h2 class="text-center mb-3">Generated Paraphrases:</h2>
+                <div class="responses">
+                    {% for response in generated_responses %}
+                    <div class="response-item mb-3 p-3">
+                        <p>{{ response }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+
+    <footer class="footer text-center py-2">
+        <p>Developed by Nithilan</p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

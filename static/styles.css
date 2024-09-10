@@ -1,0 +1,49 @@
+/* Background gradient */
+body {
+    background: linear-gradient(135deg, hsl(295, 45%, 80%), #a38080);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 60px; /* Adjust bottom margin for footer space */
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+.form-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.result .response-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
